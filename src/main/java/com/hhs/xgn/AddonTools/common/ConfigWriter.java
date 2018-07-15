@@ -16,6 +16,11 @@ public class ConfigWriter {
 	public static boolean canUseBookWood;
 	public static boolean canUseBookVoid;
 	public static boolean canUseBookAqua;
+	public static boolean canUseSoulGemKillMobs;
+	
+	public static int NamedSwordP;
+	public static int NamedSwordMod;
+	
 	public static CategoryEntry category;
 	public ConfigWriter(FMLPreInitializationEvent event) {
 		logger = event.getModLog();
@@ -46,6 +51,17 @@ public class ConfigWriter {
 		
 		comment="Can the player use Book Of Aqua to get hunger point?";
 		canUseBookAqua=config.get("items","canUseBookAqua", true,comment).getBoolean();
+		
+		comment="Can the player use Soul Gem to kill mobs?";
+		canUseSoulGemKillMobs=config.get("items","canUseSoulGemKillMobs",true,comment).getBoolean();
+		
+		comment="The prime used for hashing Named Sword.(default 999983)";
+		NamedSwordP=config.get("items", "NamedSwordP", 999983,comment).getInt();
+		
+		comment="The mod used for hashing Named Sword.(default 120)";
+		NamedSwordMod=config.get("items", "NamedSwordMod", 120,comment).getInt();
+		
+		
 		config.addCustomCategoryComment("items", "This category will help you to on/off some items' using");
 		config.save();
 		logger.info("[Addon Tools Logger]Finished loading config. ");

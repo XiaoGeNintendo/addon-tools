@@ -145,7 +145,20 @@ public class AchievementMainClass {
 	 * realname:pilot 
 	 */
 	public static Achievement af=ach("pilot",1,2,ItemTown.ps,null);
-	public static AchievementPage page=new AchievementPage("Addon Tools", a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,y,z,aa,ab,ac,ad,ae,af);
+	
+	/**
+	 * Sorry the sword is mine
+	 * realname:minesword
+	 */
+	public static Achievement ag=ach("minesword",-1,1,ItemTown.ns,null);
+	
+	/**
+	 * Master of romance
+	 * realname:mor
+	 */
+	public static Achievement ah=ach("mor",-2,1,ItemTown.sg,null);
+	
+	public static AchievementPage page=new AchievementPage("Addon Tools", a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,y,z,aa,ab,ac,ad,ae,af,ag,ah);
 	public AchievementMainClass(){
 		a.initIndependentStat().registerStat();
 		b.initIndependentStat().registerStat();
@@ -176,6 +189,8 @@ public class AchievementMainClass {
 		ad.initIndependentStat().registerStat();
 		ae.initIndependentStat().registerStat();
 		af.initIndependentStat().registerStat();
+		ag.initIndependentStat().registerStat();
+		ah.initIndependentStat().registerStat();
 		AchievementPage.registerAchievementPage(page);
 	}
 	private static Achievement ach(String name,int x,int y,Item r2,Achievement before){

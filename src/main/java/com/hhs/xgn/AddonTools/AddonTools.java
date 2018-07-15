@@ -11,11 +11,11 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-@Mod(modid = "addontools",name="Addon Tools",version="Post 5.4.0")
+@Mod(modid = "addontools",name="Addon Tools",version="Post 5.13.4")
 public class AddonTools {
 	public static final String modid="addontools";
 	public static final String name="Addon Tools";
-	public static final String version="post 5.4.0";
+	public static final String version="Post 5.13.4";
 	
 	@SidedProxy(clientSide = "com.hhs.xgn.AddonTools.client.ClientProxy", 
 	            serverSide = "com.hhs.xgn.AddonTools.common.CommonProxy")

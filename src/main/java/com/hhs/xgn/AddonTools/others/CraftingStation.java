@@ -175,6 +175,27 @@ public class CraftingStation {
 				'a',ItemTown.bw,
 				'b',Items.stick
 		});
+		GameRegistry.addShapedRecipe(new ItemStack(ItemTown.ds_), new Object[]{
+				" a ",
+				" b ",
+				" b ",
+				'a',Blocks.diamond_block,
+				'b',Items.nether_star
+		});
+		GameRegistry.addShapedRecipe(new ItemStack(ItemTown.ns),new Object[]{
+				" a ",
+				" a ",
+				" b ",
+				'a',Items.name_tag,
+				'b',Items.stick
+		});
+		GameRegistry.addShapedRecipe(new ItemStack(ItemTown.sg), new Object[]{
+				"aaa",
+				"aba",
+				"aaa",
+				'a',ItemTown.uc,
+				'b',ItemTown.rc
+		});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(BlockLoader.cb,64),new ItemStack(Blocks.cobblestone));
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemTown.bv),new ItemStack(Items.book,1),new ItemStack(ItemTown.uc,1),new ItemStack(ItemTown.sv),new ItemStack(ItemTown.bf,1),new ItemStack(ItemTown.ba,1),new ItemStack(ItemTown.bw,1));

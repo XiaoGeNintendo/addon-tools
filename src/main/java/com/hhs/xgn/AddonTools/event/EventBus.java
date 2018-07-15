@@ -1,5 +1,7 @@
 package com.hhs.xgn.AddonTools.event;
 
+import javax.annotation.MatchesPattern;
+
 import com.hhs.xgn.AddonTools.AddonTools;
 import com.hhs.xgn.AddonTools.achievement.AchievementMainClass;
 import com.hhs.xgn.AddonTools.block.BlockLoader;
@@ -56,9 +58,33 @@ public class EventBus {
 			if(event.world.getBlockState(event.pos).getBlock().equals(BlockLoader.r) && event.action.equals(Action.RIGHT_CLICK_BLOCK)){
 				event.entityPlayer.openGui(AddonTools.instance, 1, event.world,event.pos.getX(), event.pos.getY(), event.pos.getZ());
 			}
+			
+			
 		}
 	}
 	
+//	@SubscribeEvent
+//	public void LivingDeathEvent(net.minecraftforge.event.entity.living.LivingDeathEvent event){
+//		if(!(event.entityLiving instanceof EntityPlayer)) return;
+//		System.out.println("Check1");
+//		EntityPlayer p=(EntityPlayer) event.entityLiving;
+//		if(!p.inventory.hasItem(ItemTown.ds_)) return;
+//		
+//		System.out.println("Check2");
+//		
+//		ItemStack[] is=p.inventory.mainInventory;
+//		for(int i=0;i<is.length;i++){
+//			ItemStack s=is[i];
+//			if(s!=null && s.getItem().equals(ItemTown.ds_) && s.hasTagCompound() && s.getTagCompound().getInteger("soul")>0){
+//				s.getTagCompound().setInteger("soul", s.getTagCompound().getInteger("soul")-1);
+//				p.inventory.setInventorySlotContents(i, s);
+//				break;
+//			}
+//		}
+//		p.heal(200.0f);
+//		
+//		//event.setCanceled(true);
+//	}
 //	@SubscribeEvent
 //	public void EntityInteractEvent(net.minecraftforge.event.entity.player.EntityInteractEvent event){
 //		if(event.entityPlayer.getHeldItem().getItem().equals(ItemTown.as) ){

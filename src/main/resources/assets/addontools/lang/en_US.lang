@@ -151,7 +151,7 @@ item.handexpspawner.add=Get 1 free exp,now has %d exp!
 item.angerstick.name=Anger Stick
 item.angerstick.tooltip="Now with my name,Fight!"
 item.angerstick.category=Tool
-item.angerstick.help=Right-click to blind a monster,right-click another to fight!Shift-rc to reset!
+item.angerstick.help=Right-click to bind a monster,right-click another to fight!Shift-rc to reset!
 item.angerstick.reset=Reset OK.
 item.angerstick.set=The Mob 1 is OK.Fighter: %s
 item.angerstick.miss=Mob 1 lost or dead.Shift-right-click to reset.
@@ -185,6 +185,51 @@ item.pilotstick.set=Set %s ok!Sneak+Right-click to start pilot
 item.pilotstick.change=Set pilot mode to %d
 achievement.addontools.pilot=Get abroad!
 achievement.addontools.pilot.desc=Craft a Pilot Stick.
+
+item.drainstick.name=Drain stick
+item.drainstick.tooltip="To move from one to the other!"
+item.drainstick.category=Tool
+item.drainstick.help=See Github
+item.drainstick.soul=Soul:%d
+item.drainstick.blood=Blood:%d
+death.attack.drainstick=%s Was Drained
+
+item.minecraftcrasher.name=Minecraft Crasher
+item.minecraftcrasher.tooltip="OMG,my boss is coming!"
+item.minecraftcrasher.category=Easter Egg
+item.minecraftcrasher.help=RIGHT-CLICK.
+
+item.superminer.name=Super miner
+item.superminer.tooltip="I am lazy!"
+item.superminer.category=Tool
+item.superminer.help=RIGHT-CLICK.
+item.superminer.mode=Algorithm:%s
+
+item.namedsword.name=Named Sword
+item.namedsword.tooltip="The sword with your soul!"
+item.namedsword.category=Weapon
+item.namedsword.help=The damage is unstable
+item.namedsword.atk=Attack Damage:%d
+achievement.addontools.minesword=Sorry,the sword is mine
+achievement.addontools.minesword.desc=Craft a Named Sword
+death.attack.namedsword=%s Was Killed With A Named Sword
+
+item.soulgem.name=Soul Gem
+item.soulgem.tooltip="I am in!"
+item.soulgem.category=Tool
+item.soulgem.help=Change your health with another mob
+item.soulgem.maxhp=Max Health:%.1f
+item.soulgem.nowhp=Now Health:%.1f
+item.soulgem.source=Soul Source:%s
+item.soulgem.nonbt=<NO SOUL INSIDE>
+item.soulgem.error=ERROR:No Soul Inside or Soul Data Error
+item.soulgem.acquire=You successfully merge your soul with a soul of %s
+item.soulgem.ok=Successfully stored the soul 
+achievement.addontools.mor=Master of romance
+achievement.addontools.mor.desc=Craft a Soul Gem
+death.attack.soulgem=%s's soul was taken away
+
+potion.freeze=Freeze
 
 achievement.addontools.fordinner=For dinner
 achievement.addontools.fordinner.desc=Craft a Dinner Hoe

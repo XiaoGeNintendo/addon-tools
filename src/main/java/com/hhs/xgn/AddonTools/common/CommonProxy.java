@@ -28,6 +28,7 @@ public class CommonProxy
     	new AchievementMainClass();
     	new MoreAch();
     	new GuiElementLoader();
+    	
     }
 
     public void init(FMLInitializationEvent event)

@@ -73,7 +73,7 @@ public class MoreAch {
 	 */
 	public static Achievement k=ach("angryzombie",1,3,ItemTown.as,b);
 	
-	//public static Achievement f=ach("runinrun",6,0,Items.water_bucket,e);
+	
 	public AchievementPage page=new AchievementPage("Addon Tools Soul",a,b,c,d,e,f,g,h,i,j,k);
 	public MoreAch(){
 		page.registerAchievementPage(page);

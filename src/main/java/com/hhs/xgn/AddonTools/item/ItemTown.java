@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemTown {
-	
+	//TODO Id here
 	public static final String TestItemID="testitem";
 	public static final String UnbreakablePickaxeID="unbreakablepickaxe";
 	public static final String NatureEaterID="natureeater";
@@ -47,7 +47,13 @@ public class ItemTown {
 	public static final String HandNetherPortalID="handnetherportal";
 	public static final String MobMoverID="mobmover";
 	public static final String PilotStickID="pilotstick";
+	public static final String DrainStickID="drainstick";
+	public static final String MinecraftCrasherID="minecraftcrasher";
+	public static final String SuperMinerID="superminer";
+	public static final String NamedSwordID="namedsword";
+	public static final String SoulGemID="soulgem";
 	
+	//TODO Item instance here
 	public static TestItem TestItem = new TestItem();
 	public static UnbreakablePickaxe up=new UnbreakablePickaxe();//unbreakable pickaxe
 	public static NatureEater ne=new NatureEater();//Nature Eater
@@ -83,6 +89,11 @@ public class ItemTown {
 	public static HandNetherPortal hnp=new HandNetherPortal();//Hand Nether Portal
 	public static MobMover mm=new MobMover(); //Mob Mover
 	public static PilotStick ps=new PilotStick(); //Pilot Stick
+	public static DrainStick ds_=new DrainStick(); //Drain Stick
+	public static MinecraftCrasher mc=new MinecraftCrasher(); //Minecraft Crasher
+	public static SuperMiner sm=new SuperMiner(); //Super Miner
+	public static NamedSword ns=new NamedSword(); //Named Sword
+	public static SoulGem sg=new SoulGem(); //Soul gem
 	
     public ItemTown(FMLPreInitializationEvent event)
     {
@@ -122,6 +133,11 @@ public class ItemTown {
         register(hnp,HandNetherPortalID);
         register(mm,MobMoverID);
         register(ps,PilotStickID);
+        register(ds_,DrainStickID);
+        register(mc,MinecraftCrasherID);
+        register(sm,SuperMinerID);
+        register(ns,NamedSwordID);
+        register(sg,SoulGemID);
     }
 
     private static void register(Item item, String name)
@@ -168,6 +184,11 @@ public class ItemTown {
         registerRender(hnp);
         registerRender(mm);
         registerRender(ps);
+        registerRender(ds_);
+        registerRender(mc);
+        registerRender(sm);
+        registerRender(ns);
+        registerRender(sg);
     }
     
     @SideOnly(Side.CLIENT)
