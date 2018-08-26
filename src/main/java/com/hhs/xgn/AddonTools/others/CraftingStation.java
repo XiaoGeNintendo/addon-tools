@@ -196,6 +196,13 @@ public class CraftingStation {
 				'a',ItemTown.uc,
 				'b',ItemTown.rc
 		});
+		GameRegistry.addShapedRecipe(new ItemStack(ItemTown.fs), new Object[]{
+				" a ",
+				" b ",
+				" b ",
+				'a',Items.diamond,
+				'b',Items.stick
+		});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(BlockLoader.cb,64),new ItemStack(Blocks.cobblestone));
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemTown.bv),new ItemStack(Items.book,1),new ItemStack(ItemTown.uc,1),new ItemStack(ItemTown.sv),new ItemStack(ItemTown.bf,1),new ItemStack(ItemTown.ba,1),new ItemStack(ItemTown.bw,1));

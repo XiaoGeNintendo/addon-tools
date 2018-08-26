@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Lists;
 import com.hhs.xgn.AddonTools.others.TabLoader;
 
 import net.minecraft.block.Block;
@@ -13,9 +14,13 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.entity.ai.EntityAITasks;
+import net.minecraft.entity.ai.EntityAITasks.EntityAITaskEntry;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -43,29 +48,33 @@ public class TestItem extends Item{
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List tooltip, boolean advanced) {
 		// TODO Auto-generated method stub
 		tooltip.add(new ChatComponentTranslation("item.testitem.testtext").getFormattedText());
-		tooltip.add("To the translationers:How can you translate this text???It has no language file!");
+		tooltip.add("To the translators: How can you translate this text???It has no language file!");
+	}
+	
+	private void setNoAI(EntityAITasks eat){
+		List copy=Lists.newArrayList();
+		
+		for(Object obj:eat.taskEntries){
+			copy.add(obj);
+		}
+		
+		for(Object obj:copy){
+			eat.removeTask(((EntityAITaskEntry) obj).action);
+		}
+		
 	}
 	
 	@Override
-	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn) {
-		// TODO Auto-generated method stub
-		if (playerIn.isSneaking()) { // 如果玩家还按住Shift(潜行状态) 则直接返回 什么也不做
-            return itemStackIn;
-        }
-        if (!itemStackIn.hasTagCompound()) { // 判断ItemStack是否含有TagCompound 用来避免一些奇葩的特殊情况
-            itemStackIn.setTagCompound(new NBTTagCompound());
-        }
-        NBTTagCompound nbt=itemStackIn.getTagCompound();
-        nbt.setInteger("times", nbt.getInteger("times")+1);
-        playerIn.addChatComponentMessage(new ChatComponentText("LALA:"+nbt.getInteger("times")));
-		return super.onItemRightClick(itemStackIn, worldIn, playerIn);
-	}
-	
-	@Override
-	public void onCreated(ItemStack stack, World worldIn, EntityPlayer playerIn) {
-		// TODO Auto-generated method stub
-		NBTTagCompound nbt=stack.getTagCompound();
-		nbt.setInteger("times",0);
-		super.onCreated(stack, worldIn, playerIn);
+	public boolean itemInteractionForEntity(ItemStack stack, EntityPlayer playerIn, EntityLivingBase target) {
+		
+		if(target instanceof EntityLiving){
+			
+			setNoAI(((EntityLiving) target).targetTasks);
+			setNoAI(((EntityLiving) target).tasks);
+			
+			return true;
+		}else{
+			return false;
+		}
 	}
 }

@@ -9,6 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -83,8 +84,9 @@ public class AngerStick extends Item{
 			if(!world.isRemote)playerIn.addChatComponentMessage(new ChatComponentTranslation("item.angerstick.ok",e.getName(),f.getName()));
 		}
 		stack.setTagCompound(nbt);
-		//Fu*king Minecraft will now automatically change the player heldItem() 
+		//Fu*king Minecraft will not automatically change the player heldItem() 
 		playerIn.setCurrentItemOrArmor(0, stack);
+		
 		return true;
 	}
 }

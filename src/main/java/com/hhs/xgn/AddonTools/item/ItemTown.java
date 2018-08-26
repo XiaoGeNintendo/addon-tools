@@ -52,6 +52,7 @@ public class ItemTown {
 	public static final String SuperMinerID="superminer";
 	public static final String NamedSwordID="namedsword";
 	public static final String SoulGemID="soulgem";
+	public static final String FreezeStickID="freezestick";
 	
 	//TODO Item instance here
 	public static TestItem TestItem = new TestItem();
@@ -94,6 +95,7 @@ public class ItemTown {
 	public static SuperMiner sm=new SuperMiner(); //Super Miner
 	public static NamedSword ns=new NamedSword(); //Named Sword
 	public static SoulGem sg=new SoulGem(); //Soul gem
+	public static FreezeStick fs=new FreezeStick(); //Freeze Stick
 	
     public ItemTown(FMLPreInitializationEvent event)
     {
@@ -138,6 +140,7 @@ public class ItemTown {
         register(sm,SuperMinerID);
         register(ns,NamedSwordID);
         register(sg,SoulGemID);
+        register(fs,FreezeStickID);
     }
 
     private static void register(Item item, String name)
@@ -189,6 +192,7 @@ public class ItemTown {
         registerRender(sm);
         registerRender(ns);
         registerRender(sg);
+        registerRender(fs);
     }
     
     @SideOnly(Side.CLIENT)

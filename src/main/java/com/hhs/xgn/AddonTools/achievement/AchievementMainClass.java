@@ -158,7 +158,13 @@ public class AchievementMainClass {
 	 */
 	public static Achievement ah=ach("mor",-2,1,ItemTown.sg,null);
 	
-	public static AchievementPage page=new AchievementPage("Addon Tools", a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,y,z,aa,ab,ac,ad,ae,af,ag,ah);
+	/**
+	 * You have the right of silence
+	 * realname:silence
+	 */
+	public static Achievement ai=ach("silence",-2,2,ItemTown.fs,null);
+	
+	public static AchievementPage page=new AchievementPage("Addon Tools", a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,y,z,aa,ab,ac,ad,ae,af,ag,ah,ai);
 	public AchievementMainClass(){
 		a.initIndependentStat().registerStat();
 		b.initIndependentStat().registerStat();
@@ -191,6 +197,7 @@ public class AchievementMainClass {
 		af.initIndependentStat().registerStat();
 		ag.initIndependentStat().registerStat();
 		ah.initIndependentStat().registerStat();
+		ai.initIndependentStat().registerStat();
 		AchievementPage.registerAchievementPage(page);
 	}
 	private static Achievement ach(String name,int x,int y,Item r2,Achievement before){

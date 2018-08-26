@@ -135,5 +135,8 @@ public class FMLEventBus {
 		if(i.equals(ItemTown.sg)){
 			p.triggerAchievement(AchievementMainClass.ah);
 		}
+		if(i.equals(ItemTown.fs)){
+			p.triggerAchievement(AchievementMainClass.ai);
+		}
 	}
 }

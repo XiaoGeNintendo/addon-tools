@@ -223,13 +223,18 @@ item.soulgem.nowhp=Now Health:%.1f
 item.soulgem.source=Soul Source:%s
 item.soulgem.nonbt=<NO SOUL INSIDE>
 item.soulgem.error=ERROR:No Soul Inside or Soul Data Error
-item.soulgem.acquire=You successfully merge your soul with a soul of %s
+item.soulgem.acquire=You successfully merged your soul with a soul of %s
 item.soulgem.ok=Successfully stored the soul 
 achievement.addontools.mor=Master of romance
 achievement.addontools.mor.desc=Craft a Soul Gem
 death.attack.soulgem=%s's soul was taken away
 
-potion.freeze=Freeze
+item.freezestick.name=Freeze Stick
+item.freezestick.tooltip="Let it go~"
+item.freezestick.category=Tool
+item.freezestick.help=Clears all AI from a mob
+achievement.addontools.silence=You have the right of silence
+achievement.addontools.silence.desc=Craft a freeze Stick
 
 achievement.addontools.fordinner=For dinner
 achievement.addontools.fordinner.desc=Craft a Dinner Hoe
