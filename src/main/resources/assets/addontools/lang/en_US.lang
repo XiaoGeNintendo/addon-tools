@@ -236,6 +236,23 @@ item.freezestick.help=Clears all AI from a mob
 achievement.addontools.silence=You have the right of silence
 achievement.addontools.silence.desc=Craft a freeze Stick
 
+item.experiencedoll.name=Experience Doll
+item.experiencedoll.tooltip="Get more!"
+item.experiencedoll.category=Tool
+item.experiencedoll.help=Get more experience
+item.experiencedoll.lv=Exp Rate: %.1f x
+item.experiencedoll.exp=Kills: %d/%d
+item.experiencedoll.lvup=Experience Doll Level-up! Now Exp Rate:%.1f x
+item.experiencedoll.mu=[Experience Doll] Gain Experience: %d --> %d
+achievement.addontools.ete=Experience 2 Experience
+achievement.addontools.ete.desc=Craft a Experience Doll
+achievement.addontools.bt=Upgrade I
+achievement.addontools.bt.desc=Upgrade a experience doll to lv2
+achievement.addontools.btt=Blood Thirsty
+achievement.addontools.btt.desc=Upgrade a experience doll to lv10
+
+
+
 achievement.addontools.fordinner=For dinner
 achievement.addontools.fordinner.desc=Craft a Dinner Hoe
 achievement.addontools.notwood=not wood

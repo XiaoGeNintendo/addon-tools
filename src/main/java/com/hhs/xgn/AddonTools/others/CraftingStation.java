@@ -204,6 +204,7 @@ public class CraftingStation {
 				'b',Items.stick
 		});
 		
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemTown.ed),new ItemStack(Items.experience_bottle),new ItemStack(ItemTown.uc));
 		GameRegistry.addShapelessRecipe(new ItemStack(BlockLoader.cb,64),new ItemStack(Blocks.cobblestone));
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemTown.bv),new ItemStack(Items.book,1),new ItemStack(ItemTown.uc,1),new ItemStack(ItemTown.sv),new ItemStack(ItemTown.bf,1),new ItemStack(ItemTown.ba,1),new ItemStack(ItemTown.bw,1));
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemTown.bw),new ItemStack(Items.book,1),new ItemStack(ItemTown.uc,1),new ItemStack(ItemTown.sw_));

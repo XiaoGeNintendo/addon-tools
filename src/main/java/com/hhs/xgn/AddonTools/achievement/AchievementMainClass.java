@@ -164,7 +164,25 @@ public class AchievementMainClass {
 	 */
 	public static Achievement ai=ach("silence",-2,2,ItemTown.fs,null);
 	
-	public static AchievementPage page=new AchievementPage("Addon Tools", a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,y,z,aa,ab,ac,ad,ae,af,ag,ah,ai);
+	/**
+	 * Experience 2 Experience
+	 * realname:ete
+	 */
+	public static Achievement aj=ach("ete",-5,-5,ItemTown.ed,null);
+	
+	/**
+	 * Upgrade I
+	 * realname:bt
+	 */
+	public static Achievement ak=ach("bt",-5,-7,Items.experience_bottle,aj);
+	
+	/**
+	 * Blood Thirsty
+	 * realname:btt
+	 */
+	public static Achievement al=ach("btt",-5,-9,Items.experience_bottle,ak);
+	
+	public static AchievementPage page=new AchievementPage("Addon Tools", a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,y,z,aa,ab,ac,ad,ae,af,ag,ah,ai,aj,ak,al);
 	public AchievementMainClass(){
 		a.initIndependentStat().registerStat();
 		b.initIndependentStat().registerStat();
@@ -198,8 +216,12 @@ public class AchievementMainClass {
 		ag.initIndependentStat().registerStat();
 		ah.initIndependentStat().registerStat();
 		ai.initIndependentStat().registerStat();
+		aj.initIndependentStat().registerStat();
+		ak.registerStat();
+		al.setSpecial().registerStat();
 		AchievementPage.registerAchievementPage(page);
 	}
+	
 	private static Achievement ach(String name,int x,int y,Item r2,Achievement before){
 		return new Achievement("achievement.addontools."+name,"addontools."+name,x,y,r2,before);
 	}

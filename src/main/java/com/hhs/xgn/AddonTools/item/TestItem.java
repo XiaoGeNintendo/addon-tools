@@ -7,6 +7,7 @@ import java.util.List;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.hhs.xgn.AddonTools.others.TabLoader;
+import com.hhs.xgn.AddonTools.utils.xgn;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
@@ -66,15 +67,12 @@ public class TestItem extends Item{
 	
 	@Override
 	public boolean itemInteractionForEntity(ItemStack stack, EntityPlayer playerIn, EntityLivingBase target) {
-		
-		if(target instanceof EntityLiving){
-			
-			setNoAI(((EntityLiving) target).targetTasks);
-			setNoAI(((EntityLiving) target).tasks);
+		if(target instanceof EntityLiving) {
 			
 			return true;
-		}else{
+		}else {
 			return false;
 		}
+		
 	}
 }

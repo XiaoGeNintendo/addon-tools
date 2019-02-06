@@ -2,9 +2,10 @@
 // For those who want the bleeding edge
 buildscript {
     repositories {
+	  jcenter()
         maven {
             name = "forge"
-            url = "http://forgemavenmirror.sinaapp.com/maven"
+            url = "http://files.minecraftforge.net/maven"
         }
     }
     dependencies {
@@ -29,7 +30,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }*/
 
-version = "Post-5.3.0"
+version = "Post-5.14.0"
 group= "com.hhs.XGN" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "Addon Tools.jar"
 

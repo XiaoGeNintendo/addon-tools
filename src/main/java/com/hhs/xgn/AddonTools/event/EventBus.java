@@ -6,9 +6,12 @@ import com.hhs.xgn.AddonTools.AddonTools;
 import com.hhs.xgn.AddonTools.achievement.AchievementMainClass;
 import com.hhs.xgn.AddonTools.block.BlockLoader;
 import com.hhs.xgn.AddonTools.common.ConfigWriter;
+import com.hhs.xgn.AddonTools.item.ExperienceDoll;
 import com.hhs.xgn.AddonTools.item.ItemTown;
 import com.hhs.xgn.AddonTools.utils.i18nHelper;
+import com.hhs.xgn.AddonTools.utils.xgn;
 
+import net.minecraft.block.BlockFurnace;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -25,6 +28,8 @@ import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -34,6 +39,40 @@ public class EventBus {
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
+	@SubscribeEvent
+	public void LivingExperienceDropEvent (LivingExperienceDropEvent event) {
+		for(ItemStack stack:event.getAttackingPlayer().inventory.mainInventory) {
+			if(stack!=null && stack.getItem().equals(ItemTown.ed)) {
+				
+				EntityPlayer p=event.getAttackingPlayer();
+				//Add level
+				NBTTagCompound nbt=stack.getTagCompound();
+				nbt.setInteger("exp",nbt.getInteger("exp")+1);
+				
+				
+				if(nbt.getInteger("exp")>=ExperienceDoll.getNeedExp(nbt.getFloat("level"))) {
+					nbt.setInteger("exp", 0);
+					nbt.setFloat("level", nbt.getFloat("level")+0.1f);
+					p.addChatComponentMessage(new ChatComponentTranslation("item.experiencedoll.lvup", nbt.getFloat("level")));
+				}
+				
+				if(nbt.getFloat("level")>=2.0f) {
+					p.triggerAchievement(AchievementMainClass.ak);
+				}
+				if(nbt.getFloat("level")>=10.0f) {
+					p.triggerAchievement(AchievementMainClass.al);
+				}
+				
+				
+				//Times experience
+				p.addChatComponentMessage(new ChatComponentTranslation("item.experiencedoll.mu", event.getDroppedExperience(),(int) (event.getDroppedExperience()*nbt.getFloat("level"))));
+				event.setDroppedExperience((int) (event.getDroppedExperience()*nbt.getFloat("level")));
+				break;
+			}
+		}
+		
+	}
+	
 	@SubscribeEvent
 	public void FillBucketEvent(net.minecraftforge.event.entity.player.FillBucketEvent event) {
 		if (event.current.getItem().equals(ItemTown.vb)) {
